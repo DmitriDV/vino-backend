@@ -33,7 +33,7 @@ class Usager extends Modele {
                     v.nom
                     FROM vino__usager u
                     INNER JOIN vino__ville v ON u.id_ville = v.id
-                    '; 
+                    ;'; 
         
 		if(($res = $this->_db->query($requete)) ==	 true)
 		{

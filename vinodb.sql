@@ -16,12 +16,11 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de données :  `vinodb`
 --
-
 -- --------------------------------------------------------
 
 --
@@ -31,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `vino__achats` (
   `id` int(11) NOT NULL,
   `date_achat` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `vino__achats`
@@ -124,7 +123,7 @@ CREATE TABLE `vino__bouteille` (
   `format` varchar(20) DEFAULT NULL,
   `id_type` int(11) NOT NULL,
   `id_pays` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `vino__bouteille`
@@ -165,7 +164,7 @@ CREATE TABLE `vino__cellier` (
   `nom` varchar(45) NOT NULL,
   `adresse` varchar(45) DEFAULT NULL,
   `id_usager` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `vino__cellier`
@@ -196,7 +195,7 @@ CREATE TABLE `vino__cellier_bouteille` (
   `prix` float NOT NULL,
   `millesime` int(11) NOT NULL,
   `garde_jusqua` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `vino__cellier_bouteille`
@@ -226,7 +225,7 @@ CREATE TABLE `vino__erreur` (
   `id_usager` int(11) NOT NULL,
   `id_bouteille` int(11) NOT NULL,
   `erreur` tinytext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -240,7 +239,7 @@ CREATE TABLE `vino__notes` (
   `cellier_bouteille_id_cellier` int(11) NOT NULL,
   `cellier_bouteille_id_bouteille` int(11) NOT NULL,
   `cellier_bouteille_id_achats` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `vino__notes`
@@ -263,7 +262,7 @@ INSERT INTO `vino__notes` (`id_usager`, `note`, `cellier_bouteille_id_cellier`, 
 CREATE TABLE `vino__pays` (
   `id` int(11) NOT NULL,
   `nom` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `vino__pays`
@@ -287,7 +286,7 @@ CREATE TABLE `vino__reseaux` (
   `id` int(11) NOT NULL,
   `nom` varchar(45) NOT NULL,
   `url` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -298,7 +297,7 @@ CREATE TABLE `vino__reseaux` (
 CREATE TABLE `vino__reseaux_usager` (
   `id_reseaux` int(11) NOT NULL,
   `id_usager` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -309,7 +308,7 @@ CREATE TABLE `vino__reseaux_usager` (
 CREATE TABLE `vino__type` (
   `id` int(11) NOT NULL,
   `type` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `vino__type`
@@ -337,7 +336,7 @@ CREATE TABLE `vino__usager` (
   `confirmpassword` varchar(255) NOT NULL,
   `connecte` varchar(45) DEFAULT NULL,
   `image_url` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `vino__usager`
@@ -358,7 +357,7 @@ INSERT INTO `vino__usager` (`id`, `nom`, `prenom`, `courriel`, `phone`, `adresse
 CREATE TABLE `vino__ville` (
   `id` int(11) NOT NULL,
   `nom` varchar(2000) CHARACTER SET utf8 DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `vino__ville`

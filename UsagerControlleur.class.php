@@ -27,6 +27,7 @@ class UsagerControlleur
             {
                 case 'login':
                     $this->retour["data"] = $this->getListerUsager(); // Renvoie tous les utilisateurs de la base de données
+                    var_dump($this->retour["data"]);exit;
                     break;
                 case 'usager':
                     if (isset($requete->url_elements[1])) 

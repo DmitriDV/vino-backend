@@ -40,14 +40,16 @@ class MonSQL {
 
 		if (is_null(self::$_instance)) {
 			self::$_instance = new mysqli(HOST, USER, PASSWORD, DATABASE);
+            mysqli_query(self::$_instance, "SET NAMES utf8");
+
 			if (self::$_instance-> connect_errno) {
 				echo "Echec lors de la connexion à MySQL : (" . self::$_instance -> connect_errno . ") " . self::$_instance-> connect_error;
 			}
 			else {
-				self::$_instance->set_charset("UTF-8");	
+                self::$_instance->set_charset("UTF-8");	
 			}
 		}
-
+        
 		return self::$_instance;
 	}
 
